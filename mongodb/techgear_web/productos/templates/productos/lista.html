@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TechGear</title>
+</head>
+
+<body>
+
+    <h1>Catálogo TechGear</h1>
+
+    {% for producto in productos %}
+
+        <div>
+            <h2>{{ producto.nombre }}</h2>
+
+            <p>{{ producto.descripcion }}</p>
+
+            <p>
+                Precio: ${{ producto.precio }}
+            </p>
+
+            <p>
+                Stock: {{ producto.stock }}
+            </p>
+
+            <p>
+                Categoría: {{ producto.categoria }}
+            </p>
+        </div>
+
+        <hr>
+
+    {% empty %}
+
+        <p>No hay productos disponibles.</p>
+
+    {% endfor %}
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+TECHGEAR/
+│
+├── techgear_api/                    # Backend - FastAPI
+│   │
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py                  # Punto de entrada de FastAPI
+│   │   │
+│   │   ├── core/
+│   │   │   ├── __init__.py
+│   │   │   └── config.py             # Variables de entorno/configuración
+│   │   │
+│   │   ├── database/
+│   │   │   ├── __init__.py
+│   │   │   └── mongodb.py             # Conexión MongoDB Atlas
+│   │   │
+│   │   ├── models/
+│   │   │   ├── __init__.py
+│   │   │   ├── producto.py            # Modelo/documento Producto
+│   │   │   └── pedido.py              # Modelo/documento Pedido
+│   │   │
+│   │   ├── schemas/
+│   │   │   ├── __init__.py
+│   │   │   ├── producto.py            # Pydantic Producto
+│   │   │   └── pedido.py              # Pydantic Pedido
+│   │   │
+│   │   ├── routes/
+│   │   │   ├── __init__.py
+│   │   │   ├── productos.py           # Endpoints CRUD productos
+│   │   │   └── pedidos.py             # Endpoints pedidos
+│   │   │
+│   │   └── services/
+│   │       ├── __init__.py
+│   │       ├── producto_service.py    # Lógica de productos
+│   │       └── pedido_service.py      # Lógica de pedidos
+│   │
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   ├── test_productos.py
+│   │   └── test_pedidos.py
+│   │
+│   ├── .env                           # NO subir a GitHub
+│   ├── .env.example                   # Ejemplo de variables
+│   ├── .gitignore
+│   └── requirements.txt
+│
+│
+├── techgear_web/                     # Frontend - Django
+│   │
+│   ├── manage.py
+│   │
+│   ├── config/                        # Configuración del proyecto Django
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   ├── asgi.py
+│   │   └── wsgi.py
+│   │
+│   └── store/                         # Aplicación principal
+│       ├── __init__.py
+│       ├── admin.py
+│       ├── apps.py
+│       ├── models.py
+│       ├── views.py
+│       ├── urls.py
+│       │
+│       ├── services/
+│       │   ├── __init__.py
+│       │   └── api_client.py          # Peticiones HTTP a FastAPI
+│       │
+│       ├── templates/
+│       │   └── store/
+│       │       ├── base.html
+│       │       ├── productos/
+│       │       │   ├── lista.html
+│       │       │   ├── detalle.html
+│       │       │   ├── crear.html
+│       │       │   └── editar.html
+│       │       │
+│       │       └── pedidos/
+│       │           ├── lista.html
+│       │           ├── detalle.html
+│       │           └── crear.html
+│       │
+│       └── static/
+│           └── store/
+│               ├── css/
+│               │   └── styles.css
+│               ├── js/
+│               │   └── main.js
+│               └── img/
+│
+├── README.md
+├── .gitignore
+└── requirements.txt                 # Opcional, si quieres centralizar dependencias

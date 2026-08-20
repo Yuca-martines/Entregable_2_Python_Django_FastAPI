@@ -30,16 +30,16 @@ async def test_conection():
             "genero":"masculino"
         }
         
-        # Guardar el documetno en la coleccion
-        print("Guardando docuemtno de prueba en la coleccion...")
-        result= await collection.insert_one(doctest)
+        # Guardar el documento en la colección
+        print("Guardando documento de prueba en la colección...")
+        result = await collection.insert_one(doctest)
         inserted_id = result.inserted_id
 
-        print(f"Documento guardado con ID: {result,inserted_id}")
+        print(f"Documento guardado con ID: {inserted_id}")
 
         #Buscar el dato guardado en la coleccion
-        datarequest = await collection.find_one({"_id":result.inserted_id})
-        print(f"docuemto encontrado: {datarequest}")
+        datarequest = await collection.find_one({"_id": inserted_id})
+        print(f"Documento encontrado: {datarequest}")
 
     except Exception as e:
         print(f"Error al conectar a MongoDB: {e}")
